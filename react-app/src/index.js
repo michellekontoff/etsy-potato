@@ -6,6 +6,8 @@ import App from './App';
 import { ModalProvider } from './context/Modal';
 import configureStore from './store';
 
+
+// creates the shopping-cart state with localstorage and finds all the items inside cart else returns undefined
 const loadState = () => {
   try {
     const cart = localStorage.getItem('cart')
@@ -19,7 +21,8 @@ const loadState = () => {
   }
 }
 
-const state = { shoppingCart: loadState()}
+// preloads the entire application state with the shoppingcart
+const state = { shoppingCart: loadState()};
 
 const store = configureStore(state);
 
